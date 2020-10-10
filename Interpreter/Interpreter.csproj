@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C0A559C3-FCBA-41B8-BE13-7109B70092CC}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Interpreter</RootNamespace>
+    <AssemblyName>Interpreter</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Types\Data_type.cs" />
+    <Compile Include="Types\Type_array.cs" />
+    <Compile Include="Types\Type_bool.cs" />
+    <Compile Include="Types\Type_integer_var.cs" />
+    <Compile Include="Types\Type_number.cs" />
+    <Compile Include="Our_exceptions\Lex_analyser_exceptions.cs" />
+    <Compile Include="Our_exceptions\Our_runtime_exceptions.cs" />
+    <Compile Include="Our_exceptions\Syntax_analyser_exceptions.cs" />
+    <Compile Include="Our_interpreter.cs" />
+    <Compile Include="Lexical_analyser\Lexeme.cs" />
+    <Compile Include="Lexical_analyser\Lexical_analyser.cs" />
+    <Compile Include="Main_program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reverse_polish_notation\Arithmetic_operators\Div.cs" />
+    <Compile Include="Reverse_polish_notation\Arithmetic_operators\Get.cs" />
+    <Compile Include="Reverse_polish_notation\Arithmetic_operators\Minus.cs" />
+    <Compile Include="Reverse_polish_notation\Arithmetic_operators\Mul.cs" />
+    <Compile Include="Reverse_polish_notation\Arithmetic_operators\Plus.cs" />
+    <Compile Include="Reverse_polish_notation\Arithmetic_operators\Unar_minus.cs" />
+    <Compile Include="Reverse_polish_notation\Arithmetic_operators\Unar_plus.cs" />
+    <Compile Include="Reverse_polish_notation\Comparison_operators\Equal.cs" />
+    <Compile Include="Reverse_polish_notation\Comparison_operators\More.cs" />
+    <Compile Include="Reverse_polish_notation\Comparison_operators\More_or_equal.cs" />
+    <Compile Include="Reverse_polish_notation\Comparison_operators\Less.cs" />
+    <Compile Include="Reverse_polish_notation\Comparison_operators\Less_or_equal.cs" />
+    <Compile Include="Reverse_polish_notation\Empty_rpn_element.cs" />
+    <Compile Include="Reverse_polish_notation\Index.cs" />
+    <Compile Include="Reverse_polish_notation\Read_Write\Read.cs" />
+    <Compile Include="Reverse_polish_notation\Read_Write\Write.cs" />
+    <Compile Include="Reverse_polish_notation\J.cs" />
+    <Compile Include="Reverse_polish_notation\Jf.cs" />
+    <Compile Include="Reverse_polish_notation\Put_data_type_to_stack.cs" />
+    <Compile Include="Reverse_polish_notation\RPN_elem.cs" />
+    <Compile Include="Syntax_analyser\Actions.cs" />
+    <Compile Include="Syntax_analyser\Rule.cs" />
+    <Compile Include="Syntax_analyser\State.cs" />
+    <Compile Include="Syntax_analyser\SyntaxAnalyzer.cs" />
+    <Compile Include="Syntax_analyser\SyntaxTables.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
